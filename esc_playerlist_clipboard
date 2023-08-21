@@ -14,6 +14,8 @@ for i, v in ipairs(game:GetService("CoreGui").RobloxGui.SettingsClippingShield.S
 				setclipboard(string.sub(v.NameLabel.Text, 2))
 			end)
 			CopyName.Parent = v.RightSideButtons
+			CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
+			CopyName.Image = "rbxassetid://12403099678"
 		end
 	end
 end
@@ -33,6 +35,8 @@ game:GetService("Players").PlayerAdded:Connect(function(plr)
 					setclipboard(string.sub(v.NameLabel.Text, 2))
 				end)
 				CopyName.Parent = v.RightSideButtons
+				CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
+				CopyName.Image = "rbxassetid://12403099678"
 			end
 		end
 	end
