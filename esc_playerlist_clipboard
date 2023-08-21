@@ -1,5 +1,4 @@
 --[[
-Only works on UWP Roblox with the new ESC Menu.
 This script will add a copy to clipboard button to all players in the ESC player list.
 ]]--
 repeat wait() until game:IsLoaded()
@@ -9,7 +8,6 @@ for i, v in ipairs(game:GetService("CoreGui").RobloxGui.SettingsClippingShield.S
 			local CopyName = v.RightSideButtons.Inspect:Clone()
 			CopyName.Name = "CopyName"
 			CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
-			CopyName.Enabled:Destroy()
 			CopyName.AutoButtonColor = true
 			CopyName.MouseButton1Down:Connect(function()
 				setclipboard(string.sub(v.NameLabel.Text, 2))
