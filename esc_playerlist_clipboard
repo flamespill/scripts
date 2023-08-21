@@ -1,0 +1,40 @@
+--[[
+Only works on UWP Roblox with the new ESC Menu.
+This script will add a copy to clipboard button to all players in the ESC player list.
+]]--
+repeat wait() until game:IsLoaded()
+for i, v in ipairs(game:GetService("CoreGui").RobloxGui.SettingsClippingShield.SettingsShield.MenuContainer.PageViewClipper.PageView.PageViewInnerFrame.Players:GetDescendants()) do
+	if v:IsA("ImageLabel") and v:FindFirstChild("NameLabel") then
+		if not v.RightSideButtons:FindFirstChild("CopyName") then
+			local CopyName = v.RightSideButtons.Inspect:Clone()
+			CopyName.Name = "CopyName"
+			CopyName.Image = "rbxassetid://12403099678"
+			CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
+			CopyName.Enabled:Destroy()
+			CopyName.AutoButtonColor = true
+			CopyName.MouseButton1Down:Connect(function()
+				setclipboard(string.sub(v.NameLabel.Text, 2))
+			end)
+			CopyName.Parent = v.RightSideButtons
+		end
+	end
+end
+game:GetService("Players").PlayerAdded:Connect(function(plr)
+	repeat wait() until game:GetService("CoreGui").RobloxGui.SettingsClippingShield.SettingsShield.MenuContainer.PageViewClipper.PageView.PageViewInnerFrame.Players:FindFirstChild("PlayerLabel"..plr.Name)
+	for i, v in ipairs(game:GetService("CoreGui").RobloxGui.SettingsClippingShield.SettingsShield.MenuContainer.PageViewClipper.PageView.PageViewInnerFrame.Players:GetDescendants()) do
+		if v:IsA("ImageLabel") and v:FindFirstChild("NameLabel") then
+			if not v.RightSideButtons:FindFirstChild("CopyName") then
+				local CopyName = v.RightSideButtons.Inspect:Clone()
+				CopyName.Name = "CopyName"
+				CopyName.Image = "rbxassetid://12403099678"
+				CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
+				CopyName.Enabled:Destroy()
+				CopyName.AutoButtonColor = true
+				CopyName.MouseButton1Down:Connect(function()
+					setclipboard(string.sub(v.NameLabel.Text, 2))
+				end)
+				CopyName.Parent = v.RightSideButtons
+			end
+		end
+	end
+end)
