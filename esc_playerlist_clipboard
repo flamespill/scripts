@@ -7,14 +7,14 @@ for i, v in ipairs(game:GetService("CoreGui").RobloxGui.SettingsClippingShield.S
 		if not v.RightSideButtons:FindFirstChild("CopyName") then
 			local CopyName = v.RightSideButtons.Inspect:Clone()
 			CopyName.Name = "CopyName"
-			CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
+			--CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
 			--CopyName.Image = "rbxassetid://12403099678"
 			CopyName.AutoButtonColor = true
 			CopyName.MouseButton1Down:Connect(function()
 				setclipboard(string.sub(v.NameLabel.Text, 2))
 			end)
 			CopyName.Parent = v.RightSideButtons
-			CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
+			--CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
 			--CopyName.Image = "rbxassetid://12403099678"
 		end
 	end
@@ -27,16 +27,16 @@ game:GetService("Players").PlayerAdded:Connect(function(plr)
 				local CopyName = v.RightSideButtons.Inspect:Clone()
 				CopyName.Name = "CopyName"
 				CopyName.Image = "rbxassetid://12403099678"
-				CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
-				CopyName.Image = "rbxassetid://12403099678"
+				--CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
+				--CopyName.Image = "rbxassetid://12403099678"
 				CopyName.Enabled:Destroy()
 				CopyName.AutoButtonColor = true
 				CopyName.MouseButton1Down:Connect(function()
 					setclipboard(string.sub(v.NameLabel.Text, 2))
 				end)
 				CopyName.Parent = v.RightSideButtons
-				CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
-				CopyName.Image = "rbxassetid://12403099678"
+				--CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
+				--CopyName.Image = "rbxassetid://12403099678"
 			end
 		end
 	end
