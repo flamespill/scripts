@@ -7,7 +7,7 @@ for i, v in ipairs(game:GetService("CoreGui").RobloxGui.SettingsClippingShield.S
 		if not v.RightSideButtons:FindFirstChild("CopyName") then
 			local CopyName = v.RightSideButtons.Inspect:Clone()
 			CopyName.Name = "CopyName"
-			CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
+			--CopyName.InspectButtonImageLabel.Image = "rbxassetid://12403099678"
 			CopyName.Image = "rbxassetid://12403099678"
 			CopyName.AutoButtonColor = true
 			CopyName.MouseButton1Down:Connect(function()
